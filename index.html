@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="张明的示例个人简历：前端开发、教育经历与项目展示。">
+  <meta name="color-scheme" content="light">
+  <title>张明 · 个人简历（示例）</title>
+  <style>
+    :root { --ink:#182c32; --muted:#647478; --accent:#167669; --line:#dde5e1; --paper:#fff; --bg:#eef2ed; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:var(--bg); font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; line-height:1.75; }
+    a { color:var(--accent); text-underline-offset:4px; }
+    a:hover { color:#0b5148; }
+    a:focus-visible, button:focus-visible { outline:3px solid #e3a948; outline-offset:5px; }
+    .toolbar { max-width:1040px; margin:30px auto 18px; padding:0 12px; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+    .brand { font-size:12px; letter-spacing:2px; font-weight:700; }
+    button { padding:10px 18px; background:var(--ink); color:white; border:0; border-radius:7px; font:inherit; font-size:13px; cursor:pointer; }
+    button:hover { background:var(--accent); }
+    .resume { max-width:1040px; margin:0 auto 50px; background:var(--paper); box-shadow:0 12px 60px #18332b0c; border:1px solid var(--line); }
+    header { padding:54px 58px 38px; border-bottom:1px solid var(--line); display:grid; grid-template-columns:1fr auto; gap:28px; align-items:center; }
+    .eyebrow { color:var(--accent); font-size:11px; font-weight:700; letter-spacing:3px; margin:0 0 12px; }
+    h1 { font-size:48px; line-height:1.2; margin:0 0 16px; letter-spacing:5px; }
+    .role { font-size:20px; margin:0; }
+    .intro { max-width:560px; color:var(--muted); font-size:14px; margin:14px 0 0; }
+    .monogram { width:108px; height:108px; background:#eaf2ed; border:1px solid #ceded3; border-radius:50%; display:grid; place-items:center; color:var(--accent); font-family:Georgia,serif; font-size:36px; letter-spacing:3px; }
+    .content { display:grid; grid-template-columns:270px 1fr; }
+    aside { background:#f8faf7; border-right:1px solid var(--line); padding:38px 30px 42px; }
+    main { padding:38px 44px 42px; }
+    section + section { margin-top:34px; }
+    h2 { font-size:15px; margin:0 0 20px; display:flex; align-items:center; gap:10px; letter-spacing:1px; }
+    h2::before { content:""; width:4px; height:16px; border-radius:2px; background:var(--accent); }
+    h3 { font-size:16px; margin:0; }
+    p { margin:8px 0; }
+    .label { display:block; font-size:11px; color:var(--muted); margin-bottom:2px; }
+    .contact { margin:0; }
+    .contact div + div { margin-top:15px; }
+    .contact dd { margin:0; font-size:13px; overflow-wrap:anywhere; }
+    .chips { display:flex; flex-wrap:wrap; gap:8px; }
+    .chip { padding:3px 9px; border:1px solid #d5e2da; border-radius:4px; font-size:12px; color:#34574b; background:white; }
+    .small { font-size:13px; color:var(--muted); }
+    .entry + .entry { margin-top:25px; padding-top:25px; border-top:1px solid var(--line); }
+    .entry-head { display:flex; justify-content:space-between; gap:12px; align-items:baseline; }
+    .date { font-size:12px; white-space:nowrap; color:var(--muted); }
+    .subtitle { color:var(--accent); font-size:12px; margin:4px 0 10px; }
+    ul { margin:8px 0 0; padding-left:18px; font-size:13px; color:#485e63; }
+    li + li { margin-top:6px; }
+    .summary { font-size:14px; color:#485e63; margin-top:0; }
+    .notice { margin:0; padding:16px 30px; border-top:1px solid var(--line); text-align:center; font-size:11px; color:var(--muted); }
+    @media(max-width:760px) {
+      .toolbar { margin-top:18px; }
+      .resume { margin:0 12px 24px; }
+      header { padding:32px 26px; grid-template-columns:1fr; }
+      h1 { font-size:38px; }
+      .monogram { display:none; }
+      .content { grid-template-columns:1fr; }
+      aside { border-right:0; border-bottom:1px solid var(--line); padding:26px; }
+      main { padding:30px 26px; }
+      .entry-head { flex-direction:column; gap:2px; }
+      .notice { padding:15px 22px; }
+    }
+    @media print {
+      @page { size:A4; margin:12mm; }
+      body { background:white; font-size:12px; print-color-adjust:exact; -webkit-print-color-adjust:exact; }
+      .toolbar { display:none; }
+      .resume { max-width:none; margin:0; border:0; box-shadow:none; }
+      header { padding:12px 16px 24px; }
+      h1 { font-size:36px; }
+      .content { grid-template-columns:220px 1fr; }
+      aside { padding:24px 20px; }
+      main { padding:24px 26px; }
+      section + section { margin-top:22px; }
+      .entry + .entry { margin-top:18px; padding-top:18px; }
+      .entry { break-inside:avoid; }
+      h2 { break-after:avoid; margin-bottom:12px; }
+      a { text-decoration:none; }
+      .notice { padding:12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar"><span class="brand">RESUME / 个人简历</span><button type="button" onclick="window.print()">打印 / 保存为 PDF</button></div>
+  <article class="resume" aria-label="张明的示例个人简历">
+    <header>
+      <div><p class="eyebrow">BUILD WITH CARE · 持续学习，认真创造</p><h1>张明</h1><p class="role">前端开发工程师</p><p class="intro">关注清晰的交互与可靠的代码，希望用技术把好想法变成好用的产品。</p></div>
+      <div class="monogram" aria-hidden="true">ZM</div>
+    </header>
+    <div class="content">
+      <aside aria-label="基本信息">
+        <section><h2>联系信息</h2><dl class="contact">
+          <div><dt class="label">所在城市 · 示例</dt><dd>中国 · 杭州</dd></div>
+          <div><dt class="label">电子邮箱 · 示例地址</dt><dd><a href="mailto:resume@example.com">resume@example.com</a></dd></div>
+          <div><dt class="label">GitHub</dt><dd><a href="https://github.com/zbl111-hasha" target="_blank" rel="noopener noreferrer">github.com/zbl111-hasha</a></dd></div>
+          <div><dt class="label">求职方向</dt><dd>前端开发 / Web 应用开发</dd></div>
+        </dl></section>
+        <section><h2>技术技能</h2><div class="chips"><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">React</span><span class="chip">Vue</span><span class="chip">Git</span><span class="chip">Figma</span></div><p class="small">熟悉响应式布局、组件设计与基础性能优化，注重可访问性和代码可维护性。</p></section>
+        <section><h2>语言能力</h2><p class="small">中文：母语<br>英语：可阅读技术文档</p></section>
+        <section><h2>个人关键词</h2><p class="small">主动学习 · 注重细节<br>沟通协作 · 认真交付</p></section>
+      </aside>
+      <main>
+        <section><h2>关于我</h2><p class="summary">计算机专业应届毕业生，喜欢从用户需求出发设计页面，并把设计落实为简洁、流畅的 Web 界面。通过课程实践和个人项目积累开发经验，愿意在团队中持续学习，承担从页面实现到测试交付的工作。</p></section>
+        <section><h2>项目经历</h2>
+          <div class="entry"><div class="entry-head"><h3>个人知识管理平台</h3><span class="date">2026.03 — 2026.06</span></div><p class="subtitle">个人练习项目 · React / TypeScript / CSS</p><ul><li>设计笔记列表、标签筛选与全文搜索界面，支持桌面和移动端浏览。</li><li>将常用界面拆分为可复用组件，统一页面间距、颜色与交互反馈。</li><li>使用本地存储保存笔记，补充空状态、输入校验和键盘操作支持。</li></ul></div>
+          <div class="entry"><div class="entry-head"><h3>校园活动展示网站</h3><span class="date">2025.10 — 2025.12</span></div><p class="subtitle">课程团队项目 · Vue / JavaScript / Git</p><ul><li>负责活动首页、详情页与报名表单，实现分类筛选和表单验证。</li><li>与团队协作确认数据字段，通过 Git 管理分支和代码变更。</li><li>优化图片尺寸与页面布局，改善移动设备上的阅读体验。</li></ul></div>
+        </section>
+        <section><h2>教育背景</h2><div class="entry"><div class="entry-head"><h3>示例大学</h3><span class="date">2022.09 — 2026.06</span></div><p class="subtitle">计算机科学与技术 · 本科</p><p class="small">相关课程：数据结构、计算机网络、数据库原理、软件工程、Web 开发。</p></div></section>
+        <section><h2>学习与实践</h2><ul><li>持续阅读官方文档，通过小型项目练习新知识并记录开发笔记。</li><li>关注界面一致性，习惯检查不同屏幕尺寸和常见浏览器的显示效果。</li><li>重视问题复盘，能够清晰记录问题现象、解决过程与后续改进。</li></ul></section>
+      </main>
+    </div>
+    <footer class="notice">示例简历 · 除 GitHub 链接外，姓名、经历与联系方式均为演示内容，请在正式使用前替换。</footer>
+  </article>
+</body>
+</html>
